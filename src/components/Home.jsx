@@ -2,138 +2,157 @@ import React, { useState } from "react";
 import RenderProf from "./RenderProf";
 
 const StudentForm = () => {
-	const [numSubjects, setNumSubjects] = useState(0);
-	const [subjectInputs, setSubjectInputs] = useState([]);
+	const branchdata = [
+		{
+			batch: 22,
+			streams: ["BCSE", "BCOM", "BBA", "BSC", "BCA"],
+			sem: [
+				{
+					id: 1,
+					name: "Fall semester 2022-23",
+				},
+				{
+					id: 2,
+					name: "Winter semester 2022-23",
+				},
+			],
+		},
+		{
+			batch: 21,
+			streams: ["BCOM", "BBA", "BSC"],
+			sem: [
+				{
+					id: 1,
+					name: "Fall semester 2022-23",
+				},
+				{
+					id: 2,
+					name: "Winter semester 2022-23",
+				},
+			],
+		},
+		{
+			batch: 20,
+			streams: ["BSC", "BCA"],
+			sem: [
+				{
+					id: 1,
+					name: "Fall semester 2022-23",
+				},
+				{
+					id: 2,
+					name: "Winter semester 2022-23",
+				},
+			],
+		},
+	];
 
-	const handleGenerateSubjects = () => {
-		const newSubjectInputs = Array.from({ length: numSubjects }, (_, index) => (
-			<div key={index} className="flex flex-col md:flex-row md:space-x-4 mb-6">
-				<div className="w-full md:w-1/2">
-					<h2 className="text-lg font-semibold mb-2">Subject {index + 1}:</h2>
-					<input
-						type="text"
-						className="w-full p-2 border rounded mb-2"
-						placeholder={`Subject ${index + 1}`}
-					/>
-					<select className="w-full p-2 border rounded mb-2">
-						<option disabled defaultValue>
-							Select Teacher
-						</option>
-						<option>Teacher A</option>
-						<option>Teacher B</option>
-						<option>Teacher C</option>
-					</select>
-				</div>
-				<div className="w-full md:w-1/2">
-					<div className="mb-2">
-						<label className="block mb-1">Rating:</label>
-						<div className="flex items-center">
-							{[1, 2, 3, 4, 5].map((num) => (
-								<span key={num} role="img" aria-label="Star" className="mr-1">
-									⭐
-								</span>
-							))}
-						</div>
-					</div>
-					<div>
-						<label className="block mb-1">Best Teacher:</label>
-						<select className="w-full p-2 border rounded">
-							<option disabled defaultValue>
-								Best Teacher
+	const [batch, setBatch] = useState();
+	const [stream, setStream] = useState();
+	const [regNo, setRegNo] = useState();
+	const [sem, setSem] = useState();
+
+	const [streams, setStreams] = useState([]);
+	const [sems, setSems] = useState([]);
+
+	const changeBatch = (e) => {
+		setBatch(e.target.value);
+		setStreams(branchdata.find((item) => item.batch == e.target.value).streams);
+		setSems(branchdata.find((item) => item.batch == e.target.value).sem);
+	};
+
+	const changeStream = (e) => {
+		setStream(e.target.value);
+	};
+
+	const changeRegNo = (e) => {
+		setRegNo(e.target.value);
+	};
+
+	const changeSem = (e) => {
+		setSem(e.target.value);
+		console.log(batch, stream, regNo, e.target.value); // Fix branch to batch
+	};
+
+	const [formSubmitted, setFormSubmitted] = useState(false);
+
+	const handleSubmit = (e) => {
+		e.preventDefault(); // Prevent default form submission behavior
+		setFormSubmitted(true);
+	};
+
+	return (
+		<div className="flex flex-col items-center justify-center min-h-screen ">
+			<h1 className="mb-4 text-xl font-semibold text-gray-700">
+				Feedback Collection
+			</h1>
+			<p className="">Enter your Registration Number</p>
+			<form onSubmit={handleSubmit}>
+				<div className="flex space-y-4">
+					<div className="flex flex-col space-y-1">
+						<select name="" id="" value={batch} onChange={changeBatch}>
+							<option value="" disabled>
+								Select Batch
 							</option>
-							<option>Teacher A</option>
-							<option>Teacher B</option>
-							<option>Teacher C</option>
+							{branchdata.map((item, index) => (
+								<option key={index} value={item.batch}>
+									{item.batch}
+								</option>
+							))}
+						</select>
+					</div>
+					<div className="flex flex-col space-y-1">
+						<select name="" id="" value={stream} onChange={changeStream}>
+							<option value="" disabled>
+								Select Branch
+							</option>
+							{streams.map((item, index) => (
+								<option value={item} key={index}>
+									{item}
+								</option>
+							))}
+						</select>
+					</div>
+					<div className="">
+						<input
+							type="number"
+							id="numberInput"
+							value={regNo || ""}
+							pattern="\d{4}"
+							min="1000"
+							max="9999"
+							required
+							onChange={changeRegNo}
+						/>
+					</div>
+				</div>
+				<div className="">
+					<div className="flex flex-col space-y-1">
+						<select name="" id="" value={sem} onChange={changeSem}>
+							<option value="" disabled>
+								Select Semester
+							</option>
+							{sems.map((item) => (
+								<option key={item.id} value={item.id}>
+									{item.name}
+								</option>
+							))}
 						</select>
 					</div>
 				</div>
+				<div className="">
+					<button type="submit">Submit</button>
+				</div>
+			</form>
+			<div className="">
+				{formSubmitted && (
+					<div className="">
+						<RenderProf batch={batch} stream={stream} sem={sem} />
+					</div>
+				)}
 			</div>
-		));
-
-		setSubjectInputs(newSubjectInputs);
-	};
-
-  return (
-    <div className="">
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="max-w-lg p-8 bg-white rounded-lg shadow-md">
-        <h1 className="text-2xl font-semibold mb-6">Student Registration</h1>
-        <div className="mb-4">
-          <label className="block text-sm mb-1">Select Year:</label>
-          <select className="w-full p-2 border rounded">
-            <option disabled defaultValue>
-              Select Year
-            </option>
-            <option>2023</option>
-            <option>2024</option>
-            <option>2025</option>
-          </select>
-        </div>
-
-        <div className="mb-4">
-          <h2 className="text-lg font-semibold mb-2">Second Row:</h2>
-          <select className="w-full p-2 border rounded">
-            <option disabled defaultValue>
-              Select Course Branch
-            </option>
-            <option>Computer Science</option>
-            <option>Electrical Engineering</option>
-            <option>Mechanical Engineering</option>
-          </select>
-        </div>
-
-        <div className="mb-4">
-          <h2 className="text-lg font-semibold mb-2">Third Row:</h2>
-          <input
-            type="text"
-            className="w-full p-2 border rounded"
-            placeholder="Enter Student ID"
-          />
-        </div>
-
-        <div className="">
-          <RenderProf show="true" pack="22bai" />
-        </div>
-        <div>
-          <h2 className="text-lg font-semibold mb-2">Fourth Row:</h2>
-          <input
-            type="number"
-            value={numSubjects}
-            onChange={(e) => setNumSubjects(e.target.value)}
-            className="w-full p-2 border rounded mb-2 focus:outline-none focus:ring focus:border-blue-300"
-            placeholder="Number of Subjects"
-          />
-          <button
-            onClick={handleGenerateSubjects}
-            className="block w-full mt-2 bg-blue-500 text-white rounded p-2 hover:bg-blue-600 focus:outline-none"
-          >
-            Generate Subjects
-          </button>
-        </div>
-        <div className="mt-4">{subjectInputs}</div>
-        <div>
-          <label className="block text-sm mb-1">Number of Subjects:</label>
-          <input
-            type="number"
-            value={numSubjects}
-            onChange={(e) => setNumSubjects(e.target.value)}
-            className="w-full p-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
-            placeholder="Number of Subjects"
-          />
-        </div>
-        <button
-          onClick={handleGenerateSubjects}
-          className="w-full mt-4 bg-blue-500 text-white rounded p-2 hover:bg-blue-600 focus:outline-none"
-        >
-          Generate Subjects
-        </button>
-        <div className="mt-4">{subjectInputs}</div>
-      </div>
-    </div>
-    </div>
-  );
+		</div>
+	);
 };
-
-
 
 export default StudentForm;
