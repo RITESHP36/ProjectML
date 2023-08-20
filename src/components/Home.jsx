@@ -39,16 +39,17 @@ const StudentForm = () => {
 	};
 
 	return (
-		<div className="flex flex-col items-center justify-center min-h-screen ">
-			<h1 className="mb-4 text-xl font-semibold text-gray-700">
+		<div className="flex flex-col items-center p-8 bg-black h-screen">
+			<h1 className="py-4 text-5xl font-bold text-white">
 				Feedback Collection
 			</h1>
-			<p className="">Enter your Registration Number</p>
-			<form onSubmit={handleSubmit}>
-				<div className="flex space-y-4">
-					<div className="flex flex-col space-y-1">
-						<select name="" id="" value={batch} onChange={changeBatch}>
-							<option value="" disabled>
+			
+			<form onSubmit={handleSubmit} className="border-2 p-10 bg-blue-50 shadow-md shadow-blue-500/50 rounded-xl">
+			<p className="text-neutral-600 font-medium text-xl flex justify-center ">Enter your Registration Number</p>
+				<div className="flex gap-4 py-4  justify-center items-center ">
+					<div className="rounded-lg shadow-md p-2 flex justify-center items-center ">
+						<select name="" id="" value={batch} onChange={changeBatch} className="text-center bg-blue-50">
+							<option value="" disabled selected>
 								Select Batch
 							</option>
 							{branchdata.map((item, index) => (
@@ -58,9 +59,9 @@ const StudentForm = () => {
 							))}
 						</select>
 					</div>
-					<div className="flex flex-col space-y-1">
-						<select name="" id="" value={stream} onChange={changeStream}>
-							<option value="" disabled>
+					<div className="rounded-lg shadow-md p-2 flex justify-center items-center">
+						<select name="" id="" value={stream} onChange={changeStream} className="text-center bg-blue-50">
+							<option value="" disabled selected>
 								Select Branch
 							</option>
 							{streams.map((item, index) => (
@@ -70,7 +71,7 @@ const StudentForm = () => {
 							))}
 						</select>
 					</div>
-					<div className="">
+					<div className="rounded-lg shadow-md p-2 flex justify-center items-center">
 						<input
 							type="number"
 							id="numberInput"
@@ -80,13 +81,14 @@ const StudentForm = () => {
 							max="9999"
 							required
 							onChange={changeRegNo}
+							className="text-center bg-blue-50"
 						/>
 					</div>
 				</div>
 				<div className="">
-					<div className="flex flex-col space-y-1">
-						<select name="" id="" value={sem} onChange={changeSem}>
-							<option value="" disabled>
+					<div className="rounded-lg shadow-md p-2 flex justify-center px-4 items-center">
+						<select name="" id="" value={sem} onChange={changeSem} className="bg-blue-50 ring-0">
+							<option value="" disabled selected>
 								Select Semester
 							</option>
 							{sems.map((item) => (
@@ -97,13 +99,13 @@ const StudentForm = () => {
 						</select>
 					</div>
 				</div>
-				<div className="">
-					<button type="submit">Submit</button>
+				<div className="flex py-4 justify-center">
+					<button type="submit" className="px-4 py-2 font-bold bg-blue-500 text-white shadow-lg shadow-blue-500/50 rounded-lg hover:text-blue-500 hover:bg-white duration-300">Render Professors</button>
 				</div>
 			</form>
 			<div className="">
 				{formSubmitted && (
-					<div className="">
+					<div className="w-screen bg-black mt-8 pb-20">
 						<RenderProf batch={batch} stream={stream} sem={sem} />
 					</div>
 				)}
