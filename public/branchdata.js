@@ -1,7 +1,7 @@
 const branchdata = [
     {
         batch: 22,
-        streams: ["BCSE", "BCOM", "BBA", "BSC", "BCA"],
+        streams: ["BCSE", "BAI", "BRS", "BPS", "BCE"],
         sem: [
             {
                 id: 1,
