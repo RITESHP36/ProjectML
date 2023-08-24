@@ -2,6 +2,7 @@ const branchdata = [
     {
         batch: 22,
         streams: ["BCSE", "BAI", "BRS", "BPS", "BCE"],
+        
         sem: [
             {
                 id: 1,
