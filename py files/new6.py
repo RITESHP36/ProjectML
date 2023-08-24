@@ -69,16 +69,19 @@ def normal_to_bin(initial):
     }
     binslots = []
     for i in range(len_inital):
-        d = initial[i][0]
+        sub=initial[i][0]
+        d = initial[i][1]
         newd = {}
         for key, value in d.items():
             v = value
             for j in range(len(v)):
                 v[j] = normaltobinary[v[j]]
             newd[key] = v
-        newl = []
-        newl.append(newd)
-        binslots.append(newl)
+        newL = []
+        newL.append(sub)
+        newL.append(newd)
+        binslots.append(newL)
+    # print("BIN: ",binslots)
     return binslots
 
 
@@ -152,45 +155,45 @@ def bin_to_normal(tt):
 def minimum_slots():
     c=0
     for i in range(len(initial)):
-        c+=len(list(initial[i][0].values())[0])
+        c+=len(list(initial[i][1].values())[0])
     return c
 
 # values
 initial = [
     # BMAT205L
-    [{
+    ["BMAT205L",{  
         "JAYAGOPAL R": ["D1", "TD1","TDD1"],
         "SUMANTHI S": ["D1", "TD1","TDD1"],
         "ANITHA G": ["D1", "TD1","TDD1"],
     }],
     # JAVA
-    [{
+    ["JAVA",{
         "JENILA": ["TCC1", "L37", "L38", "L55", "L56"],
         "KANIMOZHI": ["TCC1", "L31", "L32", "L49", "L50"],
         "DINAKARAN": ["TCC1", "L39", "L40", "L51", "L52"],
     }],
     # DSA
-    [{
+    ["DSA",{
         "UMAMAHESHWARI": ["A1","TA1"],
         "KARTHIKEYAN": ["A1","TA1"],
     }],
     # MPMC
-    [{
+    ["MPMC",{
         "SELEVENDRAN": ["E1","TE1"],
         "SAURABH PAUL": ["E1","TE1"],
     }],
     # TOC
-    [{
+    ["TOC",{
         "BENIL": ["G1","TG1"],
         "RATHNA": ["G1","TG1"],
     }],
     # CN
-    [{
+    ["TOC",{
         "DR.KUMAR": ["F1","TF1"],
         "REKHA": ["F1","TF1"],
     }],
     # STS
-    [{
+    ["STS",{
         "FACE": ["C1","TC1"],
     }]
 ]
@@ -233,8 +236,9 @@ def is_subsequence(subseq, sequence):
 def iterlist_generator(initial):
     iterlist = []
     for i in range(len_inital):
-        len_dict = len(initial[i][0])
+        len_dict = len(initial[i][1])
         iterlist.append(len_dict - 1)
+    # print("ITERLIST : ",iterlist)
     return iterlist
 
 
@@ -251,6 +255,7 @@ def generate_permutations(iterlist):
     result = []
     max_value = iterlist.copy()
     backtrack(0)
+    # print(result)
     return result
 
 
@@ -319,8 +324,9 @@ def generate_timetable():
             "145": "",
         }
         for i in range(len_inital):
-            sublist = list(binslots[i][0].items())[iter_permutations[n][i]]
-            k = sublist[0]
+            ttsubject=binslots[i][0]
+            sublist = list(binslots[i][1].items())[iter_permutations[n][i]]
+            k = list((sublist[0],ttsubject))
             v = sublist[1]
             result = is_subsequence(v, emptyslots(tt))
             # print(k,v,result)
@@ -333,8 +339,7 @@ def generate_timetable():
             timetables.append(tt)
     return timetables
 
-
-bin_timetables = generate_timetable()
 print()
+bin_timetables = generate_timetable()
+print(bin_timetables)
 # bin timetables for time table display,we now need to display the list of prof 
-    
