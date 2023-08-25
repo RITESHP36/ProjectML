@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
 import { Rating } from "@mui/material";
+import React, { useEffect, useState } from "react";
 
-import maindata from "../../public/maindata.js";
+import maindata from "../../public/new.js";
 
 const RenderProf = ({ batch, stream, sem }) => {
 	const [prof, setProf] = useState();

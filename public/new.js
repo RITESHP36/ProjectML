@@ -72,11 +72,42 @@ const maindata = [
 								// array of profs under BMAT102P under 1st sem of BCSE under 22batch
 								prof: [
 									{
-										name: "",
+										name: "Hannah Grace G",
 									},
 									{
-										name: "Prof. B",
+										name: "Revathi G K",
 									},
+									{
+										name: "Radha S",
+									},
+									{
+										name: "Vijay Kumar P",
+									},
+									{
+										name: "Abhishek Kumar Singh",
+									},
+									{
+										name: "David Raj",
+									},
+									{
+										name: "Soumendu Roy",
+									},
+									{
+										name: "Saroj Kumar Dash",
+									},
+									{
+										name:"Lakshmanan S",
+									},
+									{
+										name: "Sowndar Rajan",
+									},
+									{
+										name: "Manimaran J",
+									},
+									{
+										name: "Harshavarthini",
+									},
+									
 								],
 							},
                             {
@@ -85,11 +116,45 @@ const maindata = [
 								// array of profs under BPHY102P under 1st sem of BCSE under 22batch
 								prof: [
 									{
-										name: "Prof. A",
+										name: "Vinitha G",
 									},
 									{
-										name: "Prof. B",
+										name: "Manikandan",
 									},
+									{
+										name: "R D Ethiraj",
+									},
+									{
+										name:"Caroline Ponraj",
+									},
+									{
+										name:"Gopinath Mundana",
+									},
+									{
+										name:"Rajasekarakumar V",
+									},
+									{
+										name:"Shalini M G",
+									},
+									{
+										name:"Rishab Antosh B",
+									},
+									{
+										name:"Ajitha B",
+									},
+									{
+										name:"Justin Raj",
+									},
+									{
+										name:"Punithavelan N",
+									},
+									{
+										name:"Kathikeyan S",
+									},
+									{
+										name:"Ram Kumar",
+									},
+									
 								],
 							},
                             {
@@ -98,16 +163,52 @@ const maindata = [
 								// array of profs under BECE102P under 1st sem of BCSE under 22batch
 								prof: [
 									{
-										name: "Prof. A",
+										name: "Prathiba A",
 									},
 									{
-										name: "Prof. B",
+										name: "Srivatsan K",
+									},
+									{
+										name: "Gargi Raina",
+									},
+									{
+										name: "Richa Dubey",
+									},
+									{
+										name: "S Jacily Jemila",
+									},
+									{
+										name: "Divya J",
+									},
+									{
+										name: "Srimathi B",
+									},
+									{
+										name: "Mohammed Aneesh",
+									},
+									{
+										name: "KB Ajeyprasaat",
+									},
+									{
+										name: "Prasanna Kumaar S",
+									},
+									{
+										name: "Sunkara Pavani",
+									},
+									{
+										name: "Srivatsan K",
+									},
+									{
+										name: "Papanasam E",
+									},
+									{
+										name: "Sourabh Paul",
 									},
 								],
 							},
                             {
 								id: "BCSE102P",
-								name: "OBject oriented programming",
+								name: "Object oriented programming",
 								// array of profs under BMCSE102P under 1st sem of BCSE under 22batch
 								prof: [
 									{
@@ -154,11 +255,45 @@ const maindata = [
 								// array of profs under BENG102P under 1st sem of BCSE under 22batch
 								prof: [
 									{
-										name: "Prof. A",
+										name: "Niranjana G",
 									},
 									{
-										name: "Prof. B",
+										name: "David Paul S",
 									},
+									{
+										name: "Bhuvaneshwari",
+									},
+									{
+										name: "Sivakami B",
+									},
+									{
+										name: "Manali Karmakar",
+									},
+									{
+										name: "Ganesh Nagaraj",
+									},
+									{
+										name: "Divya",
+									},
+									{
+										name: "Devi Meenakshi",
+									},
+									{
+										name: "Rajitha K",
+									},
+									{
+										name: "Rashmi Rekha Borah",
+									},
+									{
+										name: "S Vijayalakshmi",
+									},
+									{
+										name: "Akaitab Mukherjee",
+									},
+									{
+										name:"Samik Malla",
+									},
+									
 								],
 							},
                             
@@ -378,7 +513,7 @@ const maindata = [
 							},
                             {
 								id: "BCSE102P",
-								name: "OBject oriented programming",
+								name: "Object oriented programming",
 								// array of profs under BMCSE102P under 1st sem of BCSE under 22batch
 								prof: [
 									{
@@ -678,7 +813,7 @@ const maindata = [
 							},
                             {
 								id: "BCSE102P",
-								name: "OBject oriented programming",
+								name: "Object oriented programming",
 								// array of profs under BMCSE102P under 1st sem of BCSE under 22batch
 								prof: [
 									{
@@ -978,7 +1113,7 @@ const maindata = [
 							},
                             {
 								id: "BCSE102P",
-								name: "OBject oriented programming",
+								name: "Object oriented programming",
 								// array of profs under BMCSE102P under 1st sem of BCSE under 22batch
 								prof: [
 									{
@@ -1071,3 +1206,4 @@ const maindata = [
 		],
 	},
 ];
+export default maindata;
