@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RenderProf from "./RenderProf";
 import branchdata from "../../public/branchdata";
 
 const StudentForm = () => {
-	
 	const [batch, setBatch] = useState();
 	const [stream, setStream] = useState();
 	const [regNo, setRegNo] = useState();
 	const [sem, setSem] = useState();
+	const [completeRegNo, setCompleteRegNo] = useState("");
 
 	const [streams, setStreams] = useState([]);
 	const [sems, setSems] = useState([]);
@@ -35,7 +35,12 @@ const StudentForm = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault(); // Prevent default form submission behavior
-		setFormSubmitted(true);
+
+		if (batch && stream && regNo && sem) {
+			const newCompleteRegNo = `${batch}${stream}${regNo}`;
+			setCompleteRegNo(newCompleteRegNo);
+			setFormSubmitted(true);
+		}
 	};
 
 	return (
@@ -43,12 +48,23 @@ const StudentForm = () => {
 			<h1 className="py-4 text-5xl font-bold text-white">
 				Feedback Collection
 			</h1>
-			
-			<form onSubmit={handleSubmit} className="border-2 p-10 bg-blue-50 shadow-md shadow-blue-500/50 rounded-xl">
-			<p className="text-neutral-600 font-medium text-xl flex justify-center ">Enter your Registration Number</p>
+
+			<form
+				onSubmit={handleSubmit}
+				className="border-2 p-10 bg-blue-50 shadow-md shadow-blue-500/50 rounded-xl"
+			>
+				<p className="text-neutral-600 font-medium text-xl flex justify-center ">
+					Enter your Registration Number
+				</p>
 				<div className="flex gap-4 py-4  justify-center items-center ">
 					<div className="rounded-lg shadow-md p-2 flex justify-center items-center ">
-						<select name="" id="" value={batch} onChange={changeBatch} className="text-center bg-blue-50">
+						<select
+							name=""
+							id=""
+							value={batch}
+							onChange={changeBatch}
+							className="text-center bg-blue-50"
+						>
 							<option value="" disabled selected>
 								Select Batch
 							</option>
@@ -60,7 +76,13 @@ const StudentForm = () => {
 						</select>
 					</div>
 					<div className="rounded-lg shadow-md p-2 flex justify-center items-center">
-						<select name="" id="" value={stream} onChange={changeStream} className="text-center bg-blue-50">
+						<select
+							name=""
+							id=""
+							value={stream}
+							onChange={changeStream}
+							className="text-center bg-blue-50"
+						>
 							<option value="" disabled selected>
 								Select Branch
 							</option>
@@ -87,7 +109,13 @@ const StudentForm = () => {
 				</div>
 				<div className="">
 					<div className="rounded-lg shadow-md p-2 flex justify-center px-4 items-center">
-						<select name="" id="" value={sem} onChange={changeSem} className="bg-blue-50 ring-0">
+						<select
+							name=""
+							id=""
+							value={sem}
+							onChange={changeSem}
+							className="bg-blue-50 ring-0"
+						>
 							<option value="" disabled selected>
 								Select Semester
 							</option>
@@ -100,13 +128,23 @@ const StudentForm = () => {
 					</div>
 				</div>
 				<div className="flex py-4 justify-center">
-					<button type="submit" className="px-4 py-2 font-bold bg-blue-500 text-white shadow-lg shadow-blue-500/50 rounded-lg hover:text-blue-500 hover:bg-white duration-300">Render Professors</button>
+					<button
+						type="submit"
+						className="px-4 py-2 font-bold bg-blue-500 text-white shadow-lg shadow-blue-500/50 rounded-lg hover:text-blue-500 hover:bg-white duration-300"
+					>
+						Render Professors
+					</button>
 				</div>
 			</form>
 			<div className="">
 				{formSubmitted && (
 					<div className="w-screen bg-black mt-8 pb-20">
-						<RenderProf batch={batch} stream={stream} sem={sem} />
+						<RenderProf
+							batch={batch}
+							stream={stream}
+							sem={sem}
+							regno={completeRegNo}
+						/>
 					</div>
 				)}
 			</div>
