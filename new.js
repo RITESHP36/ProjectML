@@ -19,8 +19,14 @@ const maindata = [
 								// array of profs under BMAT101P under 1st sem of BCSE under 22batch
 								prof: [
 									{
-                                        name:"Srutha Keerthi",
+                                        name:"Srutha Keerthi B",
                                     },
+									{
+                                        name:"Karan Kumar Pradhan",
+                                    },
+									{
+										name:"Harshavarthini",
+									},
 								],
 							},
                             {
@@ -29,10 +35,13 @@ const maindata = [
 								// array of profs under BCHY101P under 1st sem of BCSE under 22batch
 								prof: [
 									{
-										name: "B",
+										name:"Ganesan",
 									},
 									{
-										name: "Prof. B",
+										name: "Buthanapalli Ramakrishna",
+									},
+									{
+										name: "Ilayaraja Perumal",
 									},
 								],
 							},
@@ -42,10 +51,13 @@ const maindata = [
 								// array of profs under BEEE101P under 1st sem of BCSE under 22batch
 								prof: [
 									{
-										name: "Prof. A",
+										name: "Subashini M",
 									},
 									{
-										name: "Prof. B",
+										name: "Umayal C",
+									},
+									{
+                                        name:"Kuruseelan",
 									},
 								],
 							},
@@ -54,7 +66,15 @@ const maindata = [
 								name: "Python",
 								// array of profs under BMCSE101P under 1st sem of BCSE under 22batch
 								prof: [
-									
+									{
+										name:"Vatchala S",
+									},
+									{
+										name:"Ganesh N",
+									},
+									{
+										name:"Modigari Narendra",
+									},
                                     
 								],
 							},
@@ -318,6 +338,9 @@ const maindata = [
 									{
                                         name:"B J Balamurugan",
                                     },
+									{
+										name:"Rajesh Kumar Mohapatra",
+									},
 								],
 							},
                             {
@@ -329,7 +352,7 @@ const maindata = [
 										name: "Lakoaji Satish",
 									},
 									{
-										name: "Prof. B",
+										name: "Pritam Gosh",
 									},
 								],
 							},
@@ -342,7 +365,7 @@ const maindata = [
 										name: "Hemavathy B",
 									},
 									{
-										name: "Prof. B",
+										name: "Ashley Mary Tom",
 									},
 								],
 							},
@@ -353,6 +376,9 @@ const maindata = [
 								prof: [
 									{
 										name:"Revathi S",
+									},
+									{
+										name:"Amrit Pal",
 									},
                                     
 								],
@@ -630,9 +656,7 @@ const maindata = [
 									{
 										name: "Kiran Kumar Tadi",
 									},
-									{
-										name: "Prof. B",
-									},
+									
 								],
 							},
                             {
@@ -643,9 +667,7 @@ const maindata = [
 									{
 										name: "Deepa T",
 									},
-									{
-										name: "Prof. B",
-									},
+									
 								],
 							},
                             {
@@ -932,9 +954,7 @@ const maindata = [
 									{
 										name: "Ramachandran",
 									},
-									{
-										name: "Prof. B",
-									},
+									
 								],
 							},
                             {
@@ -945,9 +965,7 @@ const maindata = [
 									{
 										name: "Deepa",
 									},
-									{
-										name: "Prof. B",
-									},
+									
 								],
 							},
                             {
