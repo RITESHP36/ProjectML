@@ -2,7 +2,7 @@ import { Rating } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import maindata from "../../public/new.js";
+import maindata from "../../public/maindata.js";
 
 const RenderProf = ({ batch, stream, sem, regno }) => {
 	const [prof, setProf] = useState();
