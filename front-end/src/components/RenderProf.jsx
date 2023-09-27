@@ -121,7 +121,7 @@ const RenderProf = ({ batch, stream, sem, regno }) => {
 	};
 
 	return (
-		<div className="bg-white p-4 rounded-lg w-4/6 mx-auto ">
+		<div className="bg-white p-2 md:p-4 rounded-lg w-11/12 md:w-4/6 mx-auto ">
 			<div className="">
 				<p className="text-xl font-medium text-neutral-600 text-center">
 					Select your Professor from the list and provide Feedback
@@ -130,9 +130,9 @@ const RenderProf = ({ batch, stream, sem, regno }) => {
 			<form onSubmit={handleSubmit}>
 				<div className="flex flex-col gap-2 py-4">
 					{subjects.map((subjectItem, idx) => (
-						<div key={idx} className="grid grid-cols-5">
+						<div key={idx} className="grid grid-cols-2 md:grid-cols-5 mb-4">
 							{/* Render specific information related to 'semItem' */}
-							<div className="">
+							<div className="mb-2">
 								<p className="font-medium">{subjectItem.name}</p>
 								<p className="">{subjectItem.id}</p>
 							</div>
@@ -152,7 +152,7 @@ const RenderProf = ({ batch, stream, sem, regno }) => {
 									</option>
 								))}
 							</select>
-							<div className="flex justify-center items-center">
+							<div className="flex md:justify-center items-center mb-2">
 								<Rating
 									name="half-rating"
 									defaultValue={2.5}
@@ -179,7 +179,7 @@ const RenderProf = ({ batch, stream, sem, regno }) => {
 									</option>
 								))}
 							</select>
-							<div className="flex justify-center items-center ">
+							<div className="flex justify-center items-center col-span-2 md:col-span-1">
 								<button className="border-2 border-red-500 text-xl font-bold text-red-500 py-1 px-2 rounded-lg hover:bg-red-500 hover:text-white duration-300">
 									Clear
 								</button>
