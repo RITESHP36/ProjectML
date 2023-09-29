@@ -82,6 +82,7 @@ const RenderProf = ({ batch, stream, sem, regno }) => {
 	// Function to submit the form
 	const [formError, setFormError] = useState(false);
 	const handleSubmit = async (e) => {
+		console.log("Submit button clicked");
 		e.preventDefault();
 
 		if (
@@ -130,7 +131,7 @@ const RenderProf = ({ batch, stream, sem, regno }) => {
 			<form onSubmit={handleSubmit}>
 				<div className="flex flex-col gap-2 py-4">
 					{subjects.map((subjectItem, idx) => (
-						<div key={idx} className="grid grid-cols-2 md:grid-cols-5 mb-4">
+						<div key={idx} className="grid grid-cols-2 md:grid-cols-4 mb-4">
 							{/* Render specific information related to 'semItem' */}
 							<div className="mb-2">
 								<p className="font-medium">{subjectItem.name}</p>
@@ -179,11 +180,11 @@ const RenderProf = ({ batch, stream, sem, regno }) => {
 									</option>
 								))}
 							</select>
-							<div className="flex justify-center items-center col-span-2 md:col-span-1">
+							{/* <div className="flex justify-center items-center col-span-2 md:col-span-1">
 								<button className="border-2 border-red-500 text-xl font-bold text-red-500 py-1 px-2 rounded-lg hover:bg-red-500 hover:text-white duration-300">
 									Clear
 								</button>
-							</div>
+							</div> */}
 						</div>
 					))}
 				</div>
