@@ -1,13 +1,13 @@
 import React from "react";
 
-
-const TimeTable = ({ thydata, labdata ,data}) => {
+const TimeTable = ({ morning_slots, evening_slots, data }) => {
 	const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 	const timing = [
 		"08:00-08:50",
 		"08:55-05:45",
 		"09:50-10:40",
 		"10:45-11:35",
+		"11:45-12:30",
 		"11:45-12:30",
 		"",
 		"02:00-02:50",
@@ -19,8 +19,8 @@ const TimeTable = ({ thydata, labdata ,data}) => {
 	];
 	const lunch = ["L", "U", "N", "C", "H"];
 	const rows = ["0", "1", "2", "3", "4"];
-	const thycolumns = ["0", "1", "2", "3", "4"];
-	const labcolumns = ["0", "1", "2", "3", "4", "5"];
+	const morning_col = ["0", "1", "2", "3", "4", "5"];
+	const evening_col = ["0", "1", "2", "3", "4", "5"];
 	const timingcol = [
 		"0",
 		"1",
@@ -34,6 +34,7 @@ const TimeTable = ({ thydata, labdata ,data}) => {
 		"9",
 		"10",
 		"11",
+		"12",
 	];
 
 	return (
@@ -56,31 +57,42 @@ const TimeTable = ({ thydata, labdata ,data}) => {
 							<td className="px-2 py-1 border-2 font-semibold">{`${
 								days[parseInt(row)]
 							}`}</td>
-							{thycolumns.map((column) => (
+							{morning_col.map((column) => (
 								<td
 									key={column}
 									id="${row}${column}"
-									className="px-2 py-1 border-2 text-xs text-center"
+									className=" h-full bg-amber-200 border-2 text-xs text-center "
 								>
-									
-									{thydata[`${row}${column}`]}
-									<p className=''>
-										{data[`${row}${column}`]}
-									</p>
+									<div className="grid grid-rows-1 gap-1 h-full  top-0">
+										<div className="bg-yellow-300 ">
+											{morning_slots[`${row}${column}`]}
+											<p className="">{data[`${row}${column}`]}</p>
+										</div>
+										<div className="">
+											{morning_slots[`L${row}${column}`]}
+											<p className="">{data[`L${row}${column}`]}</p>
+										</div>
+									</div>
 								</td>
 							))}
 							<td className="px-2 py-1 border-l-2 border-r-2">{`${
 								lunch[parseInt(row)]
 							}`}</td>
-							{labcolumns.map((column) => (
+							{evening_col.map((column) => (
 								<td
 									key={column}
-									className="px-2 py-1 border-2 text-xs text-center"
+									className=" h-full bg-amber-200 border-2 text-xs text-center "
 								>
-									{labdata[`1${row}${column}`]}
-									<p>
-									{data[`1${row}${column}`]}
-									</p>
+									<div className="grid grid-rows-1 gap-1 h-full  top-0">
+										<div className="bg-yellow-300 ">
+											{evening_slots[`1${row}${column}`]}
+											<p className="">{data[`1${row}${column}`]}</p>
+										</div>
+										<div className="">
+											{evening_slots[`L1${row}${column}`]}
+											<p className="">{data[`L1${row}${column}`]}</p>
+										</div>
+									</div>
 								</td>
 							))}
 						</tr>

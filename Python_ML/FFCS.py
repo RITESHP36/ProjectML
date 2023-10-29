@@ -1,7 +1,7 @@
 import pandas as pd
 from collections import Counter
-from Data import Total_courses, Total_faculties
-from Teacherlist import subjects_and_professors
+# from Data import Total_courses, Total_faculties
+# from Teacherlist import subjects_and_professors
 import json
 
 
@@ -36,8 +36,8 @@ import json
 # df.to_csv("Whole_Data.csv", index=False)
 
 
-print("Total faculties: ", len(Total_faculties))
-print("Total courses : ", len(Total_courses))
+# print("Total faculties: ", len(Total_faculties))
+# print("Total courses : ", len(Total_courses))
 
 
 # ........................................................................................
