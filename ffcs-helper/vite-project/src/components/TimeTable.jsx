@@ -61,16 +61,16 @@ const TimeTable = ({ morning_slots, evening_slots, data }) => {
 								<td
 									key={column}
 									id="${row}${column}"
-									className=" h-full bg-amber-200 border-2 text-xs text-center "
+									className=" h-20 bg-amber-200 border-2 text-xs text-center "
 								>
-									<div className="grid grid-rows-1 gap-1 h-full  top-0">
-										<div className="bg-yellow-300 ">
+									<div className="grid grid-rows-1  gap-1 h-full ">
+										<div className="bg-yellow-300 h-10 flex flex-col justify-center items-center">
 											{morning_slots[`${row}${column}`]}
 											<p className="">{data[`${row}${column}`]}</p>
 										</div>
-										<div className="">
+										<div className="h-10 flex flex-col justify-center items-center">
 											{morning_slots[`L${row}${column}`]}
-											<p className="">{data[`L${row}${column}`]}</p>
+											<p className="overflow-hidden">{data[`L${row}${column}`]}</p>
 										</div>
 									</div>
 								</td>
@@ -81,16 +81,16 @@ const TimeTable = ({ morning_slots, evening_slots, data }) => {
 							{evening_col.map((column) => (
 								<td
 									key={column}
-									className=" h-full bg-amber-200 border-2 text-xs text-center "
+									className=" h-20 bg-amber-200 border-2 text-xs text-center "
 								>
-									<div className="grid grid-rows-1 gap-1 h-full  top-0">
-										<div className="bg-yellow-300 ">
+									<div className="grid grid-rows-1 gap-1 ">
+										<div className="bg-yellow-300 h-10 flex flex-col justify-center items-center">
 											{evening_slots[`1${row}${column}`]}
-											<p className="">{data[`1${row}${column}`]}</p>
+											<p className="overflow-hidden">{data[`1${row}${column}`]}</p>
 										</div>
-										<div className="">
+										<div className="h-10 flex flex-col justify-center items-center">
 											{evening_slots[`L1${row}${column}`]}
-											<p className="">{data[`L1${row}${column}`]}</p>
+											<p className="overflow-hidden">{data[`L1${row}${column}`]}</p>
 										</div>
 									</div>
 								</td>

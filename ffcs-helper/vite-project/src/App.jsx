@@ -1,6 +1,6 @@
 import TimeTable from "./components/TimeTable";
 import React from "react";
-import alldata from "./data/alldata";
+import alldata from "./data/output";
 
 function App() {
 	const morning_slots = {
@@ -71,31 +71,31 @@ function App() {
 		102: "D2",
 		103: "TB2",
 		104: "TG2",
-		105: "",
+		105: "S3",
 		110: "B2",
 		111: "G2",
 		112: "E2",
 		113: "TC2",
 		114: "TAA2",
-		115: "",
+		115: "S1",
 		120: "C2",
 		121: "A2",
 		122: "F2",
 		123: "TD2",
 		124: "TBB2",
-		125: "",
+		125: "S4",
 		130: "D2",
 		131: "B2",
 		132: "G2",
 		133: "TE2",
 		134: "TCC2",
-		135: "",
+		135: "S2",
 		140: "E2",
 		141: "C2",
 		142: "TA2",
 		143: "TF2",
 		144: "TDD2",
-		145: "",
+		145: "-",
 		L100: "L31",
 		L101: "L32",
 		L102: "L33",

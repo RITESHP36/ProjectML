@@ -9,110 +9,109 @@
 
 # MORNING Normal to binary table
 M_and_E_normal_to_binary={
-    "A1": "00",
-    "F1": "01",
-    "D1": "02",
-    "TB1": "03",
-    "TG1": "04",
-    "B1": "10",
-    "G1": "11",
-    "E1": "12",
-    "TC1": "13",
-    "TAA1": "14",
-    "C1": "20",
-    "A1": "21",
-    "F1": "22",
-    "TD1": "23",
-    "TBB1": "24",
-    "D1": "30",
-    "B1": "31",
-    "G1": "32",
-    "TE1": "33",
-    "TCC1": "34",
-    "E1": "40",
-    "C1": "41",
-    "TA1": "42",
-    "TF1": "43",
-    "TDD1": "44",
-    "L31": "L100",
-    "L32": "L101",
-    "L33": "L102",
-    "L34": "L103",
-    "L35": "L104",
-    "L36": "L105",
-    "L37": "L110",
-    "L38": "L111",
-    "L39": "L112",
-    "L40": "L113",
-    "L41": "L114",
-    "L42": "L115",
-    "L43": "L120",
-    "L44": "L121",
-    "L45": "L122",
-    "L46": "L123",
-    "L47": "L124",
-    "L48": "L125",
-    "L49": "L130",
-    "L50": "L131",
-    "L51": "L132",
-    "L52": "L133",
-    "L53": "L134",
-    "L54": "L135",
-    "L55": "L140",
-    "L56": "L141",
-    "L57": "L142",
-    "L58": "L143",
-    "L59": "L144",
-    "L60": "L145",
-
-    "L1": "L00",
-    "L2": "L01",
-    "L3": "L02",
-    "L4": "L03",
-    "L5": "L04",
-    "L6": "L05",
-    "L7": "L10",
-    "L8": "L11",
-    "L9": "L12",
-    "L10": "L13",
-    "L11": "L14",
-    "L12": "L15",
-    "L13": "L20",
-    "L14": "L21",
-    "L15": "L22",
-    "L16": "L23",
-    "L17": "L24",
-    "L18": "L25",
-    "L19": "L30",
-    "L20": "L31",
-    "L21": "L32",
-    "L22": "L33",
-    "L23": "L34",
-    "L24": "L35",
-    "L25": "L40",
-    "L26": "L41",
-    "L27": "L42",
-    "L28": "L43",
-    "L29": "L44",
-    "L30": "L45",
-    "A2": "100",
-    "F2": "101",
-    "D2": "102",
-    "TB2": "103",
-    "TG2": "104",
-    "B2": "110",
-    "G2": "111",
-    "E2": "112",
-    "TC2": "113",
-    "TAA2": "114",
-    "C2": "120",
-    "TD2": "123",
-    "TBB2": "124",
-    "TE2": "133",
-    "TCC2": "134",
-    "TA2": "142",
-    "TF2": "143",
-    "TDD2": "144"
+    "A1": ["00", "21"],
+    "A2": ["100", "121"],
+    "TA1":["42"],
+    "TA2":["142"],
+    "TAA1":["14"],
+    "TAA2":["114"],
+    "B1": ["10", "31"],
+    "B2": ["110", "131"],
+    "TB1":["03"],
+    "TB2":["103"],
+    "TBB1":["24"],
+    "TBB2":["124"],
+    "C1": ["20", "41"],
+    "C2": ["120", "141"],
+    "TC1":["13"],
+    "TC2":["113"],
+    "TCC1":["34"],
+    "TCC2":["134"],
+    "D1": ["02", "30"],
+    "D2": ["102", "130"],
+    "TD1":["23"],
+    "TD2":["123"],
+    "TDD1":["44"],
+    "TDD2":["144"],
+    "E1": ["12", "40"],
+    "E2": ["112", "140"],
+    "TE1":["33"],
+    "TE2":["133"],    
+    "F1": ["01", "22"],
+    "F2": ["101", "122"],
+    "TF1":["43"],
+    "TF2":["143"],
+    "G1": ["11", "32"],
+    "G2": ["111", "132"],
+    "TG1":["04"],
+    "TG2":["104"],
+    "S1": ["115"],
+    "S2": ["135"],
+    "S3": ["105"],
+    "S4": ["125"],
+    "S11": ["05"],
+    "S15": ["45"],
+    "-":["15","25","35","145"],
+    "L1":["L00"],
+    "L2":["L01"],
+    "L3":["L02"],
+    "L4":["L03"],
+    "L5":["L04"],
+    "L6":["L05"],
+    "L7":["L10"],
+    "L8":["L11"],
+    "L9":["L12"],
+    "L10":["L13"],
+    "L11":["L14"],
+    "L12":["L15"],
+    "L13":["L20"],
+    "L14":["L21"],
+    "L15":["L22"],
+    "L16":["L23"],
+    "L17":["L24"],
+    "L18":["L25"],
+    "L19":["L30"],
+    "L20":["L31"],
+    "L21":["L32"],
+    "L22":["L33"],
+    "L23":["L34"],
+    "L24":["L35"],
+    "L25":["L40"],
+    "L26":["L41"],
+    "L27":["L42"],
+    "L28":["L43"],
+    "L29":["L44"],
+    "L30":["L45"],
+    "L31":["L100"],
+    "L32":["L101"],
+    "L33":["L102"],
+    "L34":["L103"],
+    "L35":["L104"],
+    "L36":["L105"],
+    "L37":["L110"],
+    "L38":["L111"],
+    "L39":["L112"],
+    "L40":["L113"],
+    "L41":["L114"],
+    "L42":["L115"],
+    "L43":["L120"],
+    "L44":["L121"],
+    "L45":["L122"],
+    "L46":["L123"],
+    "L47":["L124"],
+    "L48":["L125"],
+    "L49":["L130"],
+    "L50":["L131"],
+    "L51":["L132"],
+    "L52":["L133"],
+    "L53":["L134"],
+    "L54":["L135"],
+    "L55":["L140"],
+    "L56":["L141"],
+    "L57":["L142"],
+    "L58":["L143"],
+    "L59":["L144"],
+    "L60":["L145"],
     }
 
 M_E_binary_to_normal={
@@ -238,121 +237,6 @@ M_E_binary_to_normal={
     "145":"-",
     }
 
-# Evening normal to binary
-Ebinary_to_normal={
-    "00": "L1",
-    "01": "L2",
-    "02": "L3",
-    "03": "L4",
-    "04": "L5",
-    "05": "L6",
-    "10": "L7",
-    "11": "L8",
-    "12": "L9",
-    "13": "L10",
-    "14": "L11",
-    "15": "L12",
-    "20": "L13",
-    "21": "L14",
-    "22": "L15",
-    "23": "L16",
-    "24": "L17",
-    "25": "L18",
-    "30": "L19",
-    "31": "L20",
-    "32": "L21",
-    "33": "L22",
-    "34": "L23",
-    "35": "L24",
-    "40": "L25",
-    "41": "L26",
-    "42": "L27",
-    "43": "L28",
-    "44": "L29",
-    "45": "L30",
-    "100": "A2",
-    "101": "F2",
-    "102": "D2",
-    "103": "TB2",
-    "104": "TG2",
-    "105":"",
-    "110": "B2",
-    "111": "G2",
-    "112": "E2",
-    "113": "TC2",
-    "114": "TAA2",
-    "115":"",
-    "120": "C2",
-    "121": "A2",
-    "122": "F2",
-    "123": "TD2",
-    "124": "TBB2",
-    "125":"",
-    "130": "D2",
-    "131": "B2",
-    "132": "G2",
-    "133": "TE2",
-    "134": "TCC2",
-    "135":"",
-    "140": "E2",
-    "141": "C2",
-    "142": "TA2",
-    "143": "TF2",
-    "144": "TDD2",
-    "145":"",
-}
-
-Enormal_to_binary={
-    "L1": "00",
-    "L2": "01",
-    "L3": "02",
-    "L4": "03",
-    "L5": "04",
-    "L6": "05",
-    "L7": "10",
-    "L8": "11",
-    "L9": "12",
-    "L10": "13",
-    "L11": "14",
-    "L12": "15",
-    "L13": "20",
-    "L14": "21",
-    "L15": "22",
-    "L16": "23",
-    "L17": "24",
-    "L18": "25",
-    "L19": "30",
-    "L20": "31",
-    "L21": "32",
-    "L22": "33",
-    "L23": "34",
-    "L24": "35",
-    "L25": "40",
-    "L26": "41",
-    "L27": "42",
-    "L28": "43",
-    "L29": "44",
-    "L30": "45",
-    "A2": "100",
-    "F2": "101",
-    "D2": "102",
-    "TB2": "103",
-    "TG2": "104",
-    "B2": "110",
-    "G2": "111",
-    "E2": "112",
-    "TC2": "113",
-    "TAA2": "114",
-    "C2": "120",
-    "TD2": "123",
-    "TBB2": "124",
-    "TE2": "133",
-    "TCC2": "134",
-    "TA2": "142",
-    "TF2": "143",
-    "TDD2": "144"
-}
-
 
 # functions
 # binary slot converter
@@ -364,9 +248,12 @@ def normal_to_bin(initial):
         newd = {}
         for key, value in d.items():
             v = value
+            v1=[]
             for j in range(len(v)):
-                v[j] = normaltobinary[v[j]]
-            newd[key] = v
+                # v[j] = normaltobinary[v[j]]
+                for k in range(len(normaltobinary[v[j]])):
+                    v1.append(normaltobinary[v[j]][k])
+            newd[key] = v1
         newl = []
         newl.append(newd)
         binslots.append(newl)
@@ -385,25 +272,25 @@ def bin_to_normal(tt):
 
 def minimum_slots():
     c=0
-    for i in range(len(initial)):
-        c+=len(list(initial[i][0].values())[0])
+    for i in range(len(binslots)):
+        c+=len(list(binslots[i][0].values())[0])
     return c
 
 # values
 initial = [
     # WebProg
     [{
-        # "Dhavakumar.P": ["TG2", "L7","L8","L23","L24"],
+        "Dhavakumar.P": ["TG2", "L7","L8","L23","L24"],
         "U.Vignesh": ["TG2","L11","L12","L19","L20"],
         "Rama Parvathy L": ["TG2", "L21","L22","L29","L30"],
         "M.Marimuthu": ["TG2", "L7","L8","L23","L24"],
         "S.Prabu": ["TG2", "L9","L10","L25","L26"],
-        # "A.B.Ahadit": ["TG2", "L3","L4","L27","L28"],
+        "A.B.Ahadit": ["TG2", "L3","L4","L27","L28"],
     }],
     # dATABASE
     [{
-        # "Muralidhar": ["D2","TD2","L1","L2"],
-        # "Jani Anbarasi L": ["D2","TD2","L19","L20"],
+        "Muralidhar": ["D2","TD2","L1","L2"],
+        "Jani Anbarasi L": ["D2","TD2","L19","L20"],
         "Abishi Chowdhury": ["D2","TD2","L25","L26"],
         "Leninisha Shanmugam": ["D2","TD2","L27","L28"],
         "L.M. Jenila Livingston": ["D2","TD2","L9","L10"],
@@ -435,14 +322,16 @@ initial = [
         "FACE": ["B2","TB2"],
     }]
 ]
-minimumslots=minimum_slots()
 
 len_inital = len(initial)
 
 possible = []
 
 binslots = normal_to_bin(initial)
+minimumslots=minimum_slots()
+
 # print(binslots)
+# print(initial)
 
 
 # looping through the slots
@@ -503,6 +392,24 @@ def generate_permutations(iterlist):
 
 iterlist = iterlist_generator(initial)
 iter_permutations = generate_permutations(iterlist)
+
+# printing iter_permutations
+# for(i) in range(len(iter_permutations)):
+#     print(iter_permutations[i])
+
+def sort_matrix(matrix):
+    # create a list of tuples containing the sum of each row and the row itself
+    row_sums = [(sum(row), row) for row in matrix]
+    # sort the list of tuples in descending order by the sum of each row
+    row_sums.sort(reverse=True)
+    # create a new matrix with the sorted rows
+    sorted_matrix = [row for _, row in row_sums]
+    sorted_matrix.reverse()
+    return sorted_matrix
+
+sorted_matrix = sort_matrix(iter_permutations)
+for row in sorted_matrix:
+    print(row)
 
 # generating timetables
 def generate_timetable():
@@ -649,8 +556,8 @@ def generate_timetable():
 
 
 bin_timetables = generate_timetable()
-print(bin_timetables)
-print(len(bin_timetables))
+# print(bin_timetables)
+# print(len(bin_timetables))
 
 # displaying time table
 # for i in range(len(bin_timetables)):
@@ -708,3 +615,22 @@ print(len(bin_timetables))
 
 # to get the slot teacher aand subject data
 
+
+# to form js file
+import json
+
+def combine_dicts_to_js(bin_timetables, js_file_path):
+   
+    # Write the JSON data to a JavaScript file
+    with open(js_file_path, 'w') as js_file:
+        js_file.write(f'const alldata = {bin_timetables}')
+        js_file.write('\nexport default alldata;')
+
+    print(f'Data has been written to {js_file_path}')
+
+
+# Specify the JavaScript file path
+js_file_path = r'C:\Users\RITESH PRADHAN\Documents\GitHub\ProjectML\ffcs-helper\vite-project\src\data\output.js'
+
+# Call the function to combine dictionaries and create the JavaScript file
+combine_dicts_to_js(bin_timetables, js_file_path)
