@@ -281,7 +281,6 @@ initial = [
     # WebProg
     [{
         "Dhavakumar.P": ["TG2", "L7","L8","L23","L24"],
-        "U.Vignesh": ["TG2","L11","L12","L19","L20"],
         "Rama Parvathy L": ["TG2", "L21","L22","L29","L30"],
         "M.Marimuthu": ["TG2", "L7","L8","L23","L24"],
         "S.Prabu": ["TG2", "L9","L10","L25","L26"],
@@ -298,7 +297,7 @@ initial = [
     # CAO
     [{
         "Menaka Pushpa": ["F2","TF2"],
-        # "R.Renuka Devi": ["F2","TF2"],
+        "R.Renuka Devi": ["F2","TF2"],
         # "K M MONICA": ["F2","TF2"],
         # "Vaidehi Vijayakumar": ["F2","TF2"],
         # "Deepa Nivethika": ["F2","TF2"],
@@ -306,8 +305,9 @@ initial = [
     }],
     # ML
     [{
+        "SAJIDHA S A": ["C1","TC1","L51","L52"],
         "SAJIDHA S A": ["C2","TC2","L21","L22"],
-        # "Priyadarshini.J": ["C2","TC2","L21","L22"],
+        "Priyadarshini.J": ["C2","TC2","L21","L22"],
     }],
     # CMPLX VARIABLE AND LINEAR ALGEBRA
     [{
@@ -356,10 +356,17 @@ def emptyslots(tt):
 def is_subsequence(subseq, sequence):
     sequence_set = set(sequence)
     for x in subseq:
-        if x in sequence_set or ("L" + x) in sequence_set:
-            continue
-        else:
-            return False
+        if x[0].isdigit():
+            if x in sequence_set  and ("L" + x) in sequence_set:
+                continue
+            else:
+                return False
+        if x[0]=='L':
+            if x in sequence_set and x[1:] in sequence_set:
+                # print(x,sequence_set)
+                continue
+            else:
+                return False
     return True
 
 
@@ -393,23 +400,39 @@ def generate_permutations(iterlist):
 iterlist = iterlist_generator(initial)
 iter_permutations = generate_permutations(iterlist)
 
-# printing iter_permutations
-# for(i) in range(len(iter_permutations)):
-#     print(iter_permutations[i])
-
-def sort_matrix(matrix):
-    # create a list of tuples containing the sum of each row and the row itself
-    row_sums = [(sum(row), row) for row in matrix]
-    # sort the list of tuples in descending order by the sum of each row
-    row_sums.sort(reverse=True)
-    # create a new matrix with the sorted rows
-    sorted_matrix = [row for _, row in row_sums]
-    sorted_matrix.reverse()
-    return sorted_matrix
-
-sorted_matrix = sort_matrix(iter_permutations)
-for row in sorted_matrix:
-    print(row)
+# rearrange iter_permutations
+def frequency_of_max(sequence):
+    max_value = max(sequence)
+    return sequence.count(max_value)
+results = []
+# Generate combinations for subjects
+for subject_values in iter_permutations:
+    # print(subject_values)
+    sum_value = sum(subject_values)
+    max_value = max(subject_values)
+    freq_max_value = frequency_of_max(subject_values)
+    results.append((subject_values, sum_value, max_value, freq_max_value))
+def custom_sort(item):
+    subject_values, sum_value, max_value, freq_max_value = item
+    return sum_value, max_value, freq_max_value
+sorted_results = sorted(results, key=custom_sort)
+prev_sum = None
+prev_max = None
+matrix = [[]]
+for result in sorted_results:
+    subject_values, sum_value, max_value, freq_max_value = result
+    if prev_sum is not None and sum_value != prev_sum:
+        matrix[-1].sort(key=lambda x: (x[2], x[3]))
+        matrix.append([])
+    matrix[-1].append((subject_values, sum_value, max_value, freq_max_value))
+    prev_sum = sum_value
+    prev_max = max_value
+matrix[-1].sort(key=lambda x: (x[2], x[3]))
+final_matrix=[]
+for row in matrix:
+    for item in row:
+        final_matrix.append(item[0])
+iter_permutations=final_matrix
 
 # generating timetables
 def generate_timetable():
@@ -542,7 +565,7 @@ def generate_timetable():
             k = sublist[0]
             v = sublist[1]
             result = is_subsequence(v, emptyslots(tt))
-            # print(v,emptyslots(tt))
+            # print(k,v,emptyslots(tt),result)
             # print(k,v,result)
             if result==False:
                 break
@@ -551,6 +574,7 @@ def generate_timetable():
                 for j in range(len(v)):
                     tt[v[j]] = k
         if notempty(tt):
+            # print(iter_permutations[n])
             timetables.append(tt)
     return timetables
 
