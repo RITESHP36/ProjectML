@@ -1,7 +1,7 @@
 import { Rating } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { toast } from 'react-hot-toast';
+import { toast } from "react-hot-toast";
 
 import maindata from "../../public/maindata.js";
 
@@ -111,7 +111,7 @@ const RenderProf = ({ batch, stream, sem, regno }) => {
 				// Send this currentFeedback object to the backend API for storage
 				try {
 					const response = await axios.post(
-						"http://localhost:3000/api/submit-feedback",
+						"https://project-ml-azure.vercel.app/api/submit-feedback",
 						currentFeedback
 					);
 					console.log("Feedback submitted successfully!");
