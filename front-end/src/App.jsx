@@ -1,4 +1,6 @@
 import Home from "./components/Home"
+import { Toaster } from 'react-hot-toast';
+
 
 
 function App() {
@@ -6,6 +8,7 @@ function App() {
   return (
     <>
     <Home/>
+    <Toaster /> 
     </>
   )
 }

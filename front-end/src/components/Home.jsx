@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RenderProf from "./RenderProf";
 import branchdata from "../../public/branchdata";
+import { toast } from 'react-hot-toast';
 
 const StudentForm = () => {
 	const [batch, setBatch] = useState();
@@ -40,7 +41,9 @@ const StudentForm = () => {
 			const newCompleteRegNo = `${batch}${stream}${regNo}`;
 			setCompleteRegNo(newCompleteRegNo);
 			setFormSubmitted(true);
-		}
+		  } else {
+			toast.error("Please fill out all the fields.");
+		  }
 	};
 
 	return (

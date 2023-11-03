@@ -1,6 +1,7 @@
 import { Rating } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from 'react-hot-toast';
 
 import maindata from "../../public/maindata.js";
 
@@ -94,6 +95,7 @@ const RenderProf = ({ batch, stream, sem, regno }) => {
 			recommendProfList.includes("")
 		) {
 			console.log("Update all fields!"); // Set form submission error
+			toast.error("Please fill out all fields."); // Show an error toast
 		} else {
 			for (let i = 0; i < subjects.length; i++) {
 				const currentSubject = subjects[i];
@@ -114,8 +116,10 @@ const RenderProf = ({ batch, stream, sem, regno }) => {
 					);
 					console.log("Feedback submitted successfully!");
 					console.log(response.data); // Assuming the backend responds with some feedback confirmation
+					toast.success("Feedback submitted successfully!"); // Show a success toast
 				} catch (error) {
 					console.error("Error submitting feedback:", error);
+					toast.error("Error submitting feedback. Please try again."); // Show an error toast
 				}
 			}
 		}

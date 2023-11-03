@@ -297,25 +297,23 @@ initial = [
     # CAO
     [{
         "Menaka Pushpa": ["F2","TF2"],
-        "R.Renuka Devi": ["F2","TF2"],
-        # "K M MONICA": ["F2","TF2"],
-        # "Vaidehi Vijayakumar": ["F2","TF2"],
-        # "Deepa Nivethika": ["F2","TF2"],
-        # "Manjula V": ["F2","TF2"],
+        # "R.Renuka Devi": ["F2","TF2"],
     }],
     # ML
     [{
-        "SAJIDHA S A": ["C1","TC1","L51","L52"],
+        # "SAJIDHA S A": ["C1","TC1","L51","L52"],
         "SAJIDHA S A": ["C2","TC2","L21","L22"],
-        "Priyadarshini.J": ["C2","TC2","L21","L22"],
+        # "Priyadarshini.J": ["C2","TC2","L21","L22"],
     }],
     # CMPLX VARIABLE AND LINEAR ALGEBRA
     [{
         "COMPLEX": ["A2","TA2","TAA2"],
+        # "COMPLEX1": ["A2","TA2","TAA2"],
     }],
     # OS
     [{
         "OS": ["E2","TE2","L3","L4"],
+        # "OS1": ["E2","TE2","L3","L4"],
     }],
     # STS
     [{
@@ -330,7 +328,10 @@ possible = []
 binslots = normal_to_bin(initial)
 minimumslots=minimum_slots()
 
-# print(binslots)
+# printing element of binslot
+# for(i) in range(len(binslots)):
+#     for key, value in binslots[i][0].items():
+#         print(key, value)
 # print(initial)
 
 
@@ -400,6 +401,10 @@ def generate_permutations(iterlist):
 iterlist = iterlist_generator(initial)
 iter_permutations = generate_permutations(iterlist)
 
+# printing iterlist
+# for i in range(len(iter_permutations)):
+#     print(iter_permutations[i])
+
 # rearrange iter_permutations
 def frequency_of_max(sequence):
     max_value = max(sequence)
@@ -433,6 +438,9 @@ for row in matrix:
     for item in row:
         final_matrix.append(item[0])
 iter_permutations=final_matrix
+
+# for i in range(len(iter_permutations)):
+#     print(iter_permutations[i])
 
 # generating timetables
 def generate_timetable():
@@ -580,7 +588,7 @@ def generate_timetable():
 
 
 bin_timetables = generate_timetable()
-# print(bin_timetables)
+print(bin_timetables)
 # print(len(bin_timetables))
 
 # displaying time table
