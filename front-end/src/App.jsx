@@ -8,8 +8,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} /> {/* Use 'element' prop for components */}
-        <Route path="/feedback-entries" element={<FeedbackTable />} /> {/* Use 'element' prop for components */}
+        <Route path="/" element={<Home />} /> 
+        <Route path="/feedback-entries" element={<FeedbackTable />} /> 
       </Routes>
       <Toaster />
     </Router>
